@@ -5,6 +5,10 @@ def combine_xls_files(file1, file2, output_file):
     df1 = pd.read_excel(file1)
     df2 = pd.read_excel(file2)
     
+    # Remove leading empty columns if any
+    df1 = df1.loc[:, ~df1.columns.str.match('Unnamed')]
+    df2 = df2.loc[:, ~df2.columns.str.match('Unnamed')]
+    
     # Combine the dataframes
     combined_df = pd.concat([df1, df2], ignore_index=True)
     
