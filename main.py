@@ -3,6 +3,12 @@ import pandas as pd
 def translate_columns(df, translation_dict):
     return df.rename(columns=translation_dict)
 
+def categorize_description(description, keywords):
+    for keyword in keywords:
+        if keyword.lower() in description.lower():
+            return keyword
+    return None
+
 def combine_xls_files(file1, file2, output_file):
     # Translation dictionary from Dutch to English
     translation_dict = {
@@ -15,6 +21,9 @@ def combine_xls_files(file1, file2, output_file):
         'Transactiebedrag': 'amount',
         'Omschrijving': 'description'
     }
+    
+    # Keywords to search for in the description
+    keywords = ['picnic', 'dropbox', 'NS REIZIGERS', 'Gamma', 'Jumbo', 'Etos', 'Albert Heijn', 'Shell', 'Bol.com', 'Coolblue', 'IKEA', 'MediaMarkt', 'H&M', 'HEMA', 'Primark', 'Zalando', 'Wehkamp', 'BCC', 'KARWEI', 'Hornbach', 'Praxis', 'Action', 'Kwantum','AH to Go']
     
     # Read the two XLS files
     df1 = pd.read_excel(file1)
@@ -30,6 +39,9 @@ def combine_xls_files(file1, file2, output_file):
     
     # Combine the dataframes
     combined_df = pd.concat([df1, df2], ignore_index=True)
+    
+    # Add 'For' column based on keywords in 'description'
+    combined_df['For'] = combined_df['description'].apply(lambda x: categorize_description(x, keywords))
     
     # Write the combined dataframe to a new XLSX file
     combined_df.to_excel(output_file, index=False, engine='openpyxl')
