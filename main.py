@@ -23,7 +23,14 @@ def combine_xls_files(file1, file2, output_file):
     }
     
     # Keywords to search for in the description
-    keywords = ['picnic', 'dropbox', 'NS REIZIGERS', 'Gamma', 'Jumbo', 'Etos', 'Albert Heijn', 'Shell', 'Bol.com', 'Coolblue', 'IKEA', 'MediaMarkt', 'H&M', 'HEMA', 'Primark', 'Zalando', 'Wehkamp', 'BCC', 'KARWEI', 'Hornbach', 'Praxis', 'Action', 'Kwantum','AH to Go']
+    keywords = [
+        'AH to Go', 'AH togo', 'Action', 'Aldi', 'Albert Heijn', 'Amazon', 'Bakkerij Bekkers','BCC', 'Bijenkorf', 'Blokker',
+        'Bol.com', 'Brabant Water', 'Coop', 'Coolblue', 'Decathlon', 'Dropbox', 'Etos', 'Freo','Gamma', 'Gall&Gall', 'Geldmaat', 'Greenchoice',
+        'HEMA', 'H&M', 'HBO Max', 
+        'Hartstichting','H & M', 'Hornbach', 'Hunkemoller', 'IKEA', 'Jumbo', 'KARWEI', 'Korein', 'KPN','Kruidvat', 'Kwantum', 
+        'Lidl', 'MediaMarkt', 'Menzis','NS REIZIGERS', 'Picnic', 'Plus', 'Praxis', 'Primark', 
+        'Revolut', 'Shell', 'Spar', 'SkyShowtime', 'Netflix', 'Thermae Son', 'Tinq', 'Uniqlo','Wehkamp', 'Zalando', 'Zwembadson',
+    ]
     
     # Read the two XLS files
     df1 = pd.read_excel(file1)
@@ -42,6 +49,10 @@ def combine_xls_files(file1, file2, output_file):
     
     # Add 'For' column based on keywords in 'description'
     combined_df['For'] = combined_df['description'].apply(lambda x: categorize_description(x, keywords))
+    # Reorder columns to place 'For' before 'description'
+    cols = list(combined_df.columns)
+    cols.insert(cols.index('description'), cols.pop(cols.index('For')))
+    combined_df = combined_df[cols]
     
     # Write the combined dataframe to a new XLSX file
     combined_df.to_excel(output_file, index=False, engine='openpyxl')
