@@ -24,7 +24,8 @@ def combine_xls_files(file1, file2, output_file):
     
     # Keywords to search for in the description
     keywords = [
-        'AH to Go', 'AH togo', 'Action', 'Aldi', 'Albert Heijn', 'Amazon', 'Bakkerij Bekkers','BCC', 'Bijenkorf', 'Blokker',
+        'ABN AMRO SCHADEV','AH to Go', 'AH togo', 'Action', 'Aldi', 'Albert Heijn', 'ASR SCHADEVERZEKERING', 'Amazon', 
+        'BELASTINGDIENST','Bakkerij Bekkers','BCC', 'Bijenkorf', 'Blokker',
         'Bol.com', 'Brabant Water', 'Coop', 'Coolblue', 'Decathlon', 'Dropbox', 'Etos', 'Freo','Gamma', 'Gall&Gall', 'Geldmaat', 'Greenchoice',
         'HEMA', 'H&M', 'HBO Max', 
         'Hartstichting','H & M', 'Hornbach', 'Hunkemoller', 'IKEA', 'Jumbo', 'KARWEI', 'Korein', 'KPN','Kruidvat', 'Kwantum', 
