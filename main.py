@@ -9,7 +9,15 @@ def categorize_description(description, keywords):
             return keyword
     return None
 
-def combine_xls_files(file1, file2, output_file):
+def categorize_for(for_value, category_dict):
+    return category_dict.get(for_value, 'Other')
+
+def load_category_mapping(file_path):
+    df = pd.read_csv(file_path)
+    df['category'] = df['category'].fillna('Other')  # Fill empty categories with 'Other'
+    return dict(zip(df['keyword'], df['category']))
+
+def combine_xls_files(file1, file2, output_file, category_mapping_file):
     # Translation dictionary from Dutch to English
     translation_dict = {
         'Rekeningnummer': 'accountNumber',
@@ -22,16 +30,11 @@ def combine_xls_files(file1, file2, output_file):
         'Omschrijving': 'description'
     }
     
+    # Load category mapping from file
+    category_dict = load_category_mapping(category_mapping_file)
+    
     # Keywords to search for in the description
-    keywords = [
-        'ABN AMRO SCHADEV','AH to Go', 'AH togo', 'Action', 'Aldi', 'Albert Heijn', 'ASR SCHADEVERZEKERING', 'Amazon', 
-        'BELASTINGDIENST','Bakkerij Bekkers','BCC', 'Bijenkorf', 'Blokker',
-        'Bol.com', 'Brabant Water', 'Coop', 'Coolblue', 'Decathlon', 'Dropbox', 'Etos', 'Freo','Gamma', 'Gall&Gall', 'Geldmaat', 'Greenchoice',
-        'HEMA', 'H&M', 'HBO Max', 
-        'Hartstichting','H & M', 'Hornbach', 'Hunkemoller', 'IKEA', 'Jumbo', 'KARWEI', 'Korein', 'KPN','Kruidvat', 'Kwantum', 
-        'Lidl', 'MediaMarkt', 'Menzis','NS REIZIGERS', 'Picnic', 'Plus', 'Praxis', 'Primark', 
-        'Revolut', 'Shell', 'Spar', 'SkyShowtime', 'Netflix', 'Thermae Son', 'Tinq', 'Uniqlo','Wehkamp', 'Zalando', 'Zwembadson',
-    ]
+    keywords = list(category_dict.keys())
     
     # Read the two XLS files
     df1 = pd.read_excel(file1)
@@ -50,8 +53,13 @@ def combine_xls_files(file1, file2, output_file):
     
     # Add 'For' column based on keywords in 'description'
     combined_df['For'] = combined_df['description'].apply(lambda x: categorize_description(x, keywords))
-    # Reorder columns to place 'For' before 'description'
+    
+    # Add 'Category' column based on 'For' column
+    combined_df['Category'] = combined_df['For'].apply(lambda x: categorize_for(x, category_dict))
+    
+    # Reorder columns to place 'For' and 'Category' before 'description'
     cols = list(combined_df.columns)
+    cols.insert(cols.index('description'), cols.pop(cols.index('Category')))
     cols.insert(cols.index('description'), cols.pop(cols.index('For')))
     combined_df = combined_df[cols]
     
@@ -62,6 +70,7 @@ if __name__ == "__main__":
     file1 = 'data/XLS241025082845.xls'
     file2 = 'data/XLS241025203014.xls'
     output_file = 'data/combined_output.xlsx'  # Change the output file extension to .xlsx
+    category_mapping_file = 'data/category_mapping.csv'  # Path to the category mapping file
     
-    combine_xls_files(file1, file2, output_file)
+    combine_xls_files(file1, file2, output_file, category_mapping_file)
     print(f"Combined file saved as {output_file}")
