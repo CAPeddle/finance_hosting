@@ -36,10 +36,13 @@ categories:
     - Fysio
     - Zilveren Kruis
   Clothing:
-    - H&M
-    - HEMA
-    - H & M
-    - Mango
+    H&M:
+      - H & M
+      - H&M
+    HEMA:
+      - HEMA
+    Mango:
+      - Mango
   Software:
     - Dropbox
   Home_Improvement:

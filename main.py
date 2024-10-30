@@ -12,23 +12,17 @@ def categorize_description(description, keywords):
 
 def categorize_for(for_value, category_dict):
     for category, keywords in category_dict.items():
-        if for_value in keywords:
+        if isinstance(keywords, dict):
+            for canonical_keyword, variations in keywords.items():
+                if for_value in variations:
+                    return category
+        elif for_value in keywords:
             return category
     return 'Other'
 
 def load_yaml(file_path):
     with open(file_path, 'r') as file:
         data = yaml.safe_load(file)
-    
-    # Check if 'categories' exists in the data
-    if 'categories' in data:
-        # Check for duplicate keywords
-        all_keywords = [keyword for sublist in data['categories'].values() for keyword in sublist]
-        duplicates = set([keyword for keyword in all_keywords if all_keywords.count(keyword) > 1])
-        if duplicates:
-            raise ValueError(f"Duplicate keywords found in category mapping file: {', '.join(duplicates)}")
-            
-    
     return data
 
 def combine_xls_files(file1, file2, output_file, translation_file, category_mapping_file):
@@ -39,7 +33,13 @@ def combine_xls_files(file1, file2, output_file, translation_file, category_mapp
     category_dict = load_yaml(category_mapping_file)['categories']
     
     # Keywords to search for in the description
-    keywords = [keyword for sublist in category_dict.values() for keyword in sublist]
+    keywords = []
+    for kw in category_dict.values():
+        if isinstance(kw, dict):
+            for variations in kw.values():
+                keywords.extend(variations)
+        else:
+            keywords.extend(kw)
     
     # Read the two XLS files
     df1 = pd.read_excel(file1)
