@@ -1,0 +1,88 @@
+categories:
+  Salary:
+    - Morningstar
+    - Capgemini
+  Groceries:
+    - AH to Go
+    - AH togo
+    - AH XL
+    - AH Station
+    - Aldi
+    - Albert Heijn
+    - Jumbo
+    - Gall&Gall
+    - Picnic
+    - Bakkerij Bekkers
+    - De Dames
+    - Picnic
+  KidsSchool:
+    - BSO
+    - Kinderopvang
+    - Kinderopvangtoeslag
+    - Kinderdagverblijf
+    - Korein
+    - Korein Kinderplein
+  Pharmacy:
+    - Etos
+    - Kruidvat
+  Restaurants:
+    - Domino's
+    - McDonald's
+    - New York Pizza
+    - Subway
+    - Thuisbezorgd
+    - SumUp
+  Health:
+    - Fysio
+    - Zilveren Kruis
+  Clothing:
+    - H&M
+    - HEMA
+    - H & M
+    - Mango
+  Software:
+    - Dropbox
+  Home_Improvement:
+    - Gamma
+  Transport:
+    - NS REIZIGERS
+    - NS GROEP
+    - TinQ
+    - Shell
+  Online_Shopping:
+    - AliExpress
+    - Bol.com
+    - Bolcom
+    - Coolblue
+    - Wish
+    - Amazon
+  CarOwnership:
+    - ANWB
+    - Freo
+  Sports:
+    - Basic-Fit
+    - Zwembadson
+    - Thermae Son
+  Entertainment:
+    - Netflix
+    - Spotify
+    - HBO Max
+  Other:
+    - ABN AMRO SCHADEV
+    - Action
+    - ASR SCHADEVERZEKERING
+    - BELASTINGDIENST
+    - BCC
+    - Bijenkorf
+    - Blokker
+    - Hornbach
+    - Praxis
+    - Brabant Water
+    - Coop
+    - Decathlon
+    - Geldmaat
+    - Greenchoice
+    - Hartstichting
+    - IKEA
+  Revolut:
+    - Revolut

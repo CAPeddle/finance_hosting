@@ -1,4 +1,5 @@
 import pandas as pd
+import yaml
 
 def translate_columns(df, translation_dict):
     return df.rename(columns=translation_dict)
@@ -10,31 +11,35 @@ def categorize_description(description, keywords):
     return None
 
 def categorize_for(for_value, category_dict):
-    return category_dict.get(for_value, 'Other')
+    for category, keywords in category_dict.items():
+        if for_value in keywords:
+            return category
+    return 'Other'
 
-def load_category_mapping(file_path):
-    df = pd.read_csv(file_path)
-    df['category'] = df['category'].fillna('Other')  # Fill empty categories with 'Other'
-    return dict(zip(df['keyword'], df['category']))
+def load_yaml(file_path):
+    with open(file_path, 'r') as file:
+        data = yaml.safe_load(file)
+    
+    # Check if 'categories' exists in the data
+    if 'categories' in data:
+        # Check for duplicate keywords
+        all_keywords = [keyword for sublist in data['categories'].values() for keyword in sublist]
+        duplicates = set([keyword for keyword in all_keywords if all_keywords.count(keyword) > 1])
+        if duplicates:
+            raise ValueError(f"Duplicate keywords found in category mapping file: {', '.join(duplicates)}")
+            
+    
+    return data
 
-def combine_xls_files(file1, file2, output_file, category_mapping_file):
-    # Translation dictionary from Dutch to English
-    translation_dict = {
-        'Rekeningnummer': 'accountNumber',
-        'Muntsoort': 'mutationcode',
-        'Transactiedatum': 'transactiondate',
-        'Rentedatum': 'valuedate',
-        'Beginsaldo': 'startsaldo',
-        'Eindsaldo': 'endsaldo',
-        'Transactiebedrag': 'amount',
-        'Omschrijving': 'description'
-    }
+def combine_xls_files(file1, file2, output_file, translation_file, category_mapping_file):
+    # Load column translations from file
+    translation_dict = load_yaml(translation_file)['translations']
     
     # Load category mapping from file
-    category_dict = load_category_mapping(category_mapping_file)
+    category_dict = load_yaml(category_mapping_file)['categories']
     
     # Keywords to search for in the description
-    keywords = list(category_dict.keys())
+    keywords = [keyword for sublist in category_dict.values() for keyword in sublist]
     
     # Read the two XLS files
     df1 = pd.read_excel(file1)
@@ -70,7 +75,8 @@ if __name__ == "__main__":
     file1 = 'data/XLS241025082845.xls'
     file2 = 'data/XLS241025203014.xls'
     output_file = 'data/combined_output.xlsx'  # Change the output file extension to .xlsx
-    category_mapping_file = 'data/category_mapping.csv'  # Path to the category mapping file
+    translation_file = 'data/column_translations.yaml'  # Path to the column translations file
+    category_mapping_file = 'data/category_mapping.yaml'  # Path to the category mapping file
     
-    combine_xls_files(file1, file2, output_file, category_mapping_file)
+    combine_xls_files(file1, file2, output_file, translation_file, category_mapping_file)
     print(f"Combined file saved as {output_file}")
