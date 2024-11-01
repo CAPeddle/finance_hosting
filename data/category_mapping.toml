@@ -17,6 +17,9 @@ keywords = ["De Efteling","Bioscoop","Cinema","Cinema Gold","het gouden wou","Di
 [categories.Holidays]
 keywords = ["Huttopia", "Booking.com", "Expedia", "KLM", "VakantieVeilingen", "Vliegtickets.nl"]
 
+[categories.Savings]
+keywords = ["Direct Sparen"]
+
 [categories.Restaurants]
 "McDonalds" = ["MC Donald","McDonald's", "McDonalds","McBest"]
 keywords = ["La Toscana","PETIT CASSE GRAINE","D N Kleine Dommel","Mangiare","De Helden van Kien", "TAZA - Ethiopi","Panino Bar", "bij de beek","Domino's", "McDonald's", "New York Pizza", "Subway", "Thuisbezorgd", "SumUp", "Restaurant"]
@@ -30,7 +33,7 @@ keywords = ["Fysio", "Zilveren Kruis"]
 keywords = ["Lopers","G-Star RAW","Uniqlo","My Jewelry","Zalando","bonprix","HEMA","Mango","Sissy-Boy","Zara"]
 
 [categories.Services]
-keywords = ["KPN","Dropbox"]
+keywords = ["KPN","Dropbox", "Ziggo"]
 
 [categories.Home_Improvement]
 keywords = ["Climate Workx","Hasco Bouwmarkt","Wallism","Veneta","IKEA", "Gamma", "Hornbach", "Praxis"]
@@ -51,7 +54,7 @@ keywords = ["Lidl","AliExpress", "Bol.com", "Bolcom", "Coolblue", "Wish", "Amazo
 keywords = ["Autocentrum","ANWB", "Freo"]
 
 [categories.HouseOwnership]
-keywords = ["Woonbedrijf", "Woonbedrijf ieder1", "Brabant Water", "Enexis", "Vitens", "VvE", "VvE Beheer","Hypotheek"]
+keywords = ["Woonbedrijf", "Woonbedrijf ieder1", "Brabant Water", "Enexis", "Vitens", "VvE", "VvE Beheer","Hypotheek","Termijnbetaling hy potheek"]
 
 [categories.memberships]
 keywords = ["Bibliotheek"]
