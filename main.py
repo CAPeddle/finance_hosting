@@ -78,6 +78,12 @@ def combine_xls_files(file1, file2, output_file, translation_file, category_mapp
         for month, group in combined_df.groupby('Month'):
             group.drop(columns=['Month'], inplace=True)
             group.to_excel(writer, sheet_name=str(month), index=False)
+        
+        # Create a summary DataFrame
+        summary_df = combined_df.pivot_table(index='Category', columns='Month', values='amount', aggfunc='sum', fill_value=0)
+        
+        # Write the summary DataFrame to a new sheet
+        summary_df.to_excel(writer, sheet_name='Summary')
     
     print(f"Combined file saved as {output_file}")
 
