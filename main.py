@@ -1,5 +1,5 @@
 import pandas as pd
-import yaml
+import toml
 
 def translate_columns(df, translation_dict):
     return df.rename(columns=translation_dict)
@@ -20,17 +20,17 @@ def categorize_for(for_value, category_dict):
             return category
     return 'Other'
 
-def load_yaml(file_path):
+def load_toml(file_path):
     with open(file_path, 'r') as file:
-        data = yaml.safe_load(file)
+        data = toml.load(file)
     return data
 
 def combine_xls_files(file1, file2, output_file, translation_file, category_mapping_file):
     # Load column translations from file
-    translation_dict = load_yaml(translation_file)['translations']
+    translation_dict = load_toml(translation_file)['translations']
     
     # Load category mapping from file
-    category_dict = load_yaml(category_mapping_file)['categories']
+    category_dict = load_toml(category_mapping_file)['categories']
     
     # Keywords to search for in the description
     keywords = []
@@ -75,8 +75,8 @@ if __name__ == "__main__":
     file1 = 'data/XLS241025082845.xls'
     file2 = 'data/XLS241025203014.xls'
     output_file = 'data/combined_output.xlsx'  # Change the output file extension to .xlsx
-    translation_file = 'data/column_translations.yaml'  # Path to the column translations file
-    category_mapping_file = 'data/category_mapping.yaml'  # Path to the category mapping file
+    translation_file = 'data/column_translations.toml'  # Path to the column translations file
+    category_mapping_file = 'data/category_mapping.toml'  # Path to the category mapping file
     
     combine_xls_files(file1, file2, output_file, translation_file, category_mapping_file)
     print(f"Combined file saved as {output_file}")

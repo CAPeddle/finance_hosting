@@ -1,0 +1,72 @@
+[categories]
+[categories.Salary]
+keywords = ["Morningstar", "Capgemini"]
+
+[categories.Groceries]
+keywords = ["Hospitalents","Marks&Spencer","Auchan Super","Bakerij","Starbucks","Houwen's Vlaai","Convento","Tuincentrum Krans","M&S Simply Food","The Cloud Club","Easy Fresh","Gras Horeca","Slagerij","Maxicoffee","Carrefour", "Compass","Kiosk","AH to Go", "AH togo", "AH XL", "AH Station", "Aldi", "Albert Heijn", "Jumbo", "Gall&Gall", "Picnic", "Bakkerij Bekkers", "De Dames", "Picnic"]
+
+[categories.KidsSchool]
+keywords = ["Stichting Kinderactiviteiten","Sitly","BSO", "Kinderopvang", "Kinderopvangtoeslag", "Kinderdagverblijf", "Korein", "Korein Kinderplein"]
+
+[categories.Pharmacy]
+keywords = ["Benu","iHerb","Drogist","Etos", "Kruidvat"]
+
+[categories.Activities]
+keywords = ["De Efteling","Bioscoop","Cinema","Cinema Gold","het gouden wou","Dierenrijk","City Guide","Labyrint Drielande","Eindhoven Zoo"]
+
+[categories.Holidays]
+keywords = ["Huttopia", "Booking.com", "Expedia", "KLM", "VakantieVeilingen", "Vliegtickets.nl"]
+
+[categories.Restaurants]
+"McDonalds" = ["MC Donald","McDonald's", "McDonalds","McBest"]
+keywords = ["La Toscana","PETIT CASSE GRAINE","D N Kleine Dommel","Mangiare","De Helden van Kien", "TAZA - Ethiopi","Panino Bar", "bij de beek","Domino's", "McDonald's", "New York Pizza", "Subway", "Thuisbezorgd", "SumUp", "Restaurant"]
+
+[categories.Health]
+keywords = ["Fysio", "Zilveren Kruis"]
+
+[categories.Clothing]
+"H&M" = ["H & M", "H&M","hm.com"]
+"C&A" = ["C&A", "C&A Online"]
+keywords = ["Lopers","G-Star RAW","Uniqlo","My Jewelry","Zalando","bonprix","HEMA","Mango","Sissy-Boy","Zara"]
+
+[categories.Software]
+keywords = ["Dropbox"]
+
+[categories.Home_Improvement]
+keywords = ["Hasco Bouwmarkt","Wallism","Veneta","IKEA", "Gamma", "Hornbach", "Praxis"]
+
+[categories.Transport]
+keywords = ["Fiets en Sport","Sanef","ASoil Wilsele","P3-Mikado","GULF EIJSDEN", "Total","Esso", "NS REIZIGERS", "NS GROEP", "TinQ", "Shell", "Q-Park", "Parkmobile", "Park-line", "Parking"]
+
+[categories.Knutsel]
+keywords = ["Scrapfever","Legeakademiet","Mozaiek","Pipoos","Pipoos Online","Pipoos.nl","Pipoos.com","Pipoos.be","Pipoos.de","Pipoos.fr","Pipoos.es","Pipoos.it","Pipoos.pt","Pipoos.pl","Pipoos.cz","Pipoos.hu","Pipoos.ro","Pipoos.bg","Pipoos.gr","Pipoos.tr","Pipoos.ru","Pipoos.ua","Pipoos.by","Pipoos.kz","Pipoos.lt","Pipoos.lv","Pipoos.ee","Pipoos.fi","Pipoos.se","Pipoos.no","Pipoos.dk","Pipoos.is","Pipoos.ie","Pipoos.co.uk","Pipoos.nl","Pipoos.be","Pipoos.de","Pipoos.fr","Pipoos.es","Pipoos.it","Pipoos.pt","Pipoos.pl","Pipoos.cz","Pipoos.hu","Pipoos.ro","Pipoos.bg","Pipoos.gr","Pipoos.tr","Pipoos.ru","Pipoos.ua","Pipoos.by","Pipoos.kz","Pipoos.lt","Pipoos.lv","Pipoos.ee","Pipoos.fi","Pipoos.se","Pipoos.no","Pipoos.dk","Pipoos.is","Pipoos.ie","Pipoos.co.uk","Pipoos.nl","Pipoos.be","Pipoos.de","Pipoos.fr","Pipoos.es","Pipoos.it","Pipoos.pt","Pipoos.pl","Pipoos.cz","Pipoos.hu","Pipoos.ro","Pipoos.bg","Pipoos.gr","Pipoos.tr","Pipoos.ru","Pipoos.ua","Pipoos.by","Pipoos.kz","Pipoos.lt","Pipoos.lv","Pipoos.ee","Pipoos.fi","Pipoos.se","Pipoos.no","Pipoos.dk","Pipoos.is","Pipoos.ie","Pipoos.co.uk","Pipoos.nl","Pipoos.be","Pipoos.de","Pipoos.fr","Pipoos.es","Pipoos.it","Pipoos.pt","Pipoos.pl","Pipoos.cz","Pipoos.hu","Pipoos.ro"]
+
+[categories.Toys]
+keywords = ["ILoveSpeelgoed"]
+
+[categories.Online_Shopping]
+keywords = ["Lidl","AliExpress", "Bol.com", "Bolcom", "Coolblue", "Wish", "Amazon"]
+
+[categories.CarOwnership]
+keywords = ["ANWB", "Freo"]
+
+[categories.HouseOwnership]
+keywords = ["Woonbedrijf", "Woonbedrijf ieder1", "Brabant Water", "Enexis", "Vitens", "VvE", "VvE Beheer"]
+
+[categories.memberships]
+keywords = ["Bibliotheek"]
+
+[categories.Sports]
+keywords = ["Basic-Fit", "Zwembadson", "Thermae Son"]
+
+[categories.Entertainment]
+keywords = ["Netflix", "Spotify", "HBO Max"]
+
+[categories.Insurance]
+keywords = ["ABN AMRO SCHADEV", "ASR SCHADEVERZEKERING", "Basic Package"]
+
+[categories.Other]
+keywords = ["Action", "BCC", "Bijenkorf", "Blokker", "Coop", "Decathlon", "Geldmaat", "Greenchoice", "Hartstichting"]
+
+[categories.Revolut]
+keywords = ["Revolut"]
