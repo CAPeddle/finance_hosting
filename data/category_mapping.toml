@@ -25,15 +25,15 @@ keywords = ["La Toscana","PETIT CASSE GRAINE","D N Kleine Dommel","Mangiare","De
 keywords = ["Fysio", "Zilveren Kruis"]
 
 [categories.Clothing]
-"H&M" = ["H & M", "H&M","hm.com"]
+"H&M" = ["hm.com","H & M", "H&M"]
 "C&A" = ["C&A", "C&A Online"]
 keywords = ["Lopers","G-Star RAW","Uniqlo","My Jewelry","Zalando","bonprix","HEMA","Mango","Sissy-Boy","Zara"]
 
-[categories.Software]
-keywords = ["Dropbox"]
+[categories.Services]
+keywords = ["KPN","Dropbox"]
 
 [categories.Home_Improvement]
-keywords = ["Hasco Bouwmarkt","Wallism","Veneta","IKEA", "Gamma", "Hornbach", "Praxis"]
+keywords = ["Climate Workx","Hasco Bouwmarkt","Wallism","Veneta","IKEA", "Gamma", "Hornbach", "Praxis"]
 
 [categories.Transport]
 keywords = ["Fiets en Sport","Sanef","ASoil Wilsele","P3-Mikado","GULF EIJSDEN", "Total","Esso", "NS REIZIGERS", "NS GROEP", "TinQ", "Shell", "Q-Park", "Parkmobile", "Park-line", "Parking"]
@@ -48,10 +48,10 @@ keywords = ["ILoveSpeelgoed"]
 keywords = ["Lidl","AliExpress", "Bol.com", "Bolcom", "Coolblue", "Wish", "Amazon"]
 
 [categories.CarOwnership]
-keywords = ["ANWB", "Freo"]
+keywords = ["Autocentrum","ANWB", "Freo"]
 
 [categories.HouseOwnership]
-keywords = ["Woonbedrijf", "Woonbedrijf ieder1", "Brabant Water", "Enexis", "Vitens", "VvE", "VvE Beheer"]
+keywords = ["Woonbedrijf", "Woonbedrijf ieder1", "Brabant Water", "Enexis", "Vitens", "VvE", "VvE Beheer","Hypotheek"]
 
 [categories.memberships]
 keywords = ["Bibliotheek"]

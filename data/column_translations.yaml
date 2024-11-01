@@ -1,9 +1,0 @@
-translations:
-  Rekeningnummer: accountNumber
-  Muntsoort: mutationcode
-  Transactiedatum: transactiondate
-  Rentedatum: valuedate
-  Beginsaldo: startsaldo
-  Eindsaldo: endsaldo
-  Transactiebedrag: amount
-  Omschrijving: description
