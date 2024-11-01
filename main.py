@@ -73,6 +73,9 @@ def combine_xls_files(file1, file2, output_file, translation_file, category_mapp
     cols = [col for col in combined_df.columns if col != 'description'] + ['description']
     combined_df = combined_df[cols]
     
+    # Update Category to 'Salary' for positive amounts if no category is assigned
+    combined_df.loc[(combined_df['amount'] > 0) & (combined_df['Category'].isna() | (combined_df['Category'] == 'Other')), 'Category'] = 'Salary'
+    
     # Write the combined dataframe to a new XLSX file with different sheets for each month
     with pd.ExcelWriter(output_file, engine='openpyxl') as writer:
         for month, group in combined_df.groupby('Month'):
