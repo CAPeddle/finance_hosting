@@ -1,5 +1,6 @@
 import pandas as pd
 import toml
+from datetime import datetime
 
 def translate_columns(df, translation_dict):
     return df.rename(columns=translation_dict)
@@ -62,14 +63,19 @@ def combine_xls_files(file1, file2, output_file, translation_file, category_mapp
     # Add 'Category' column based on 'For' column
     combined_df['Category'] = combined_df['For'].apply(lambda x: categorize_for(x, category_dict))
     
-    # Reorder columns to place 'For' and 'Category' before 'description'
-    cols = list(combined_df.columns)
-    cols.insert(cols.index('description'), cols.pop(cols.index('Category')))
-    cols.insert(cols.index('description'), cols.pop(cols.index('For')))
-    combined_df = combined_df[cols]
+    # Convert 'transactiondate' to datetime
+    combined_df['transactiondate'] = pd.to_datetime(combined_df['transactiondate'], format='%Y%m%d')
     
-    # Write the combined dataframe to a new XLSX file
-    combined_df.to_excel(output_file, index=False, engine='openpyxl')
+    # Group by month
+    combined_df['Month'] = combined_df['transactiondate'].dt.to_period('M')
+    
+    # Write the combined dataframe to a new XLSX file with different sheets for each month
+    with pd.ExcelWriter(output_file, engine='openpyxl') as writer:
+        for month, group in combined_df.groupby('Month'):
+            group.drop(columns=['Month'], inplace=True)
+            group.to_excel(writer, sheet_name=str(month), index=False)
+    
+    print(f"Combined file saved as {output_file}")
 
 if __name__ == "__main__":
     file1 = 'data/XLS241025082845.xls'
@@ -79,4 +85,3 @@ if __name__ == "__main__":
     category_mapping_file = 'data/category_mapping.toml'  # Path to the category mapping file
     
     combine_xls_files(file1, file2, output_file, translation_file, category_mapping_file)
-    print(f"Combined file saved as {output_file}")
