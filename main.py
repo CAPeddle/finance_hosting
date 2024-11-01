@@ -69,6 +69,10 @@ def combine_xls_files(file1, file2, output_file, translation_file, category_mapp
     # Group by month
     combined_df['Month'] = combined_df['transactiondate'].dt.to_period('M')
     
+    # Move 'description' column to the end
+    cols = [col for col in combined_df.columns if col != 'description'] + ['description']
+    combined_df = combined_df[cols]
+    
     # Write the combined dataframe to a new XLSX file with different sheets for each month
     with pd.ExcelWriter(output_file, engine='openpyxl') as writer:
         for month, group in combined_df.groupby('Month'):
