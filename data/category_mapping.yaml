@@ -32,6 +32,7 @@ categories:
     - Subway
     - Thuisbezorgd
     - SumUp
+    - Restaurant
   Health:
     - Fysio
     - Zilveren Kruis
@@ -46,12 +47,19 @@ categories:
   Software:
     - Dropbox
   Home_Improvement:
+    - IKEA
     - Gamma
+    - Hornbach
+    - Praxis
   Transport:
     - NS REIZIGERS
     - NS GROEP
     - TinQ
     - Shell
+    - Q-Park
+    - Parkmobile
+    - Park-line
+    - Parking
   Online_Shopping:
     - AliExpress
     - Bol.com
@@ -70,22 +78,20 @@ categories:
     - Netflix
     - Spotify
     - HBO Max
-  Other:
+  Insurance:
     - ABN AMRO SCHADEV
-    - Action
     - ASR SCHADEVERZEKERING
     - BELASTINGDIENST
+  Other:
+    - Action
     - BCC
     - Bijenkorf
     - Blokker
-    - Hornbach
-    - Praxis
     - Brabant Water
     - Coop
     - Decathlon
     - Geldmaat
     - Greenchoice
     - Hartstichting
-    - IKEA
   Revolut:
     - Revolut
