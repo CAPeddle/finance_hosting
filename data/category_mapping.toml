@@ -6,7 +6,7 @@ keywords = ["Morningstar", "Capgemini"]
 keywords = ["Hospitalents","Marks&Spencer","Auchan Super","Bakerij","Starbucks","Houwen's Vlaai","Convento","Tuincentrum Krans","M&S Simply Food","The Cloud Club","Easy Fresh","Gras Horeca","Slagerij","Maxicoffee","Carrefour", "Compass","Kiosk","AH to Go", "AH togo", "AH XL", "AH Station", "Aldi", "Albert Heijn", "Jumbo", "Gall&Gall", "Picnic", "Bakkerij Bekkers", "De Dames", "Picnic"]
 
 [categories.KidsSchool]
-keywords = ["Stichting Kinderactiviteiten","Sitly","BSO", "Kinderopvang", "Kinderopvangtoeslag", "Kinderdagverblijf", "Korein", "Korein Kinderplein"]
+keywords = ["Stichting Kinderactiviteiten","Sitly","BSO", "Kinderdagverblijf", "Korein", "Korein Kinderplein"]
 
 [categories.Pharmacy]
 keywords = ["Benu","iHerb","Drogist","Etos", "Kruidvat"]
