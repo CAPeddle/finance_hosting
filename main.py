@@ -92,15 +92,15 @@ def combine_xls_files(file1, file2, output_file, translation_file, category_mapp
 
 if __name__ == "__main__":
     import sys
-    if len(sys.argv) != 3:
-        print(f"Usage: python combine_xls.py <file1> <file2> (provided {len(sys.argv) - 1} arguments)")
+    if len(sys.argv) < 3:
+        print(f"Usage: python3 main.py <file1> <file2> (provided {len(sys.argv) - 1} arguments)")
         sys.exit(1)
 
     file1 = sys.argv[1]
     file2 = sys.argv[2]
     # file1 = 'data/XLS241025082845.xls'
     # file2 = 'data/XLS241025203014.xls'
-    output_file = 'data/combined_output.xlsx'  # Change the output file extension to .xlsx
+    output_file = 'uploads/combined_output.xlsx'  # Change the output file extension to .xlsx
     translation_file = 'data/column_translations.toml'  # Path to the column translations file
     category_mapping_file = 'data/category_mapping.toml'  # Path to the category mapping file
     

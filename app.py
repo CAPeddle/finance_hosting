@@ -32,7 +32,7 @@ def upload_files():
         output_file = os.path.join(app.config['UPLOAD_FOLDER'], 'combined_output.xlsx')
         translation_file = 'data/column_translations.toml'
         category_mapping_file = 'data/category_mapping.toml'
-        subprocess.run(['python3', 'combine_xls.py', file1_path, file2_path, output_file, translation_file, category_mapping_file])
+        subprocess.run(['python3', 'main.py', file1_path, file2_path, output_file, translation_file, category_mapping_file])
         return send_file(output_file, as_attachment=True)
     return redirect(request.url)
 
