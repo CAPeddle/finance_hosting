@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance to serve xls_combiner
+After=network.target
+
+[Service]
+User=pi
+Group=www-data
+WorkingDirectory=/home/pi/xls_combiner
+Environment="PATH=/home/pi/xls_combiner/venv/bin"
+ExecStart=/home/pi/xls_combiner/venv/bin/gunicorn -w 2 -b 0.0.0.0:5000 wsgi:app
+
+[Install]
+WantedBy=multi-user.target
