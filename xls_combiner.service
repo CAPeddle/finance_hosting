@@ -5,9 +5,9 @@ After=network.target
 [Service]
 User=cpeddle
 Group=www-data
-WorkingDirectory=/home/pi/xls_combiner
-Environment="PATH=/home/pi/xls_combiner/venv/bin"
-ExecStart=/home/pi/xls_combiner/venv/bin/gunicorn -w 2 -b 0.0.0.0:5000 wsgi:app
+WorkingDirectory=/home/cpeddle/xls_combiner
+Environment="PATH=/home/cpeddle/xls_combiner/venv/bin"
+ExecStart=/home/cpeddle/xls_combiner/venv/bin/gunicorn -w 2 -b 0.0.0.0:5000 wsgi:app
 
 [Install]
 WantedBy=multi-user.target
