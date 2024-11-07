@@ -11,3 +11,5 @@ pip3 install Flask pandas toml openpyxl xlrd gunicorn
 sudo systemctl daemon-reload
 sudo systemctl start xls_combiner
 sudo systemctl enable xls_combiner
+
+sudo systemctl status xls_combiner

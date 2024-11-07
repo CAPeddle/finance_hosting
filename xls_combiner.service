@@ -3,7 +3,7 @@ Description=Gunicorn instance to serve xls_combiner
 After=network.target
 
 [Service]
-User=pi
+User=cpeddle
 Group=www-data
 WorkingDirectory=/home/pi/xls_combiner
 Environment="PATH=/home/pi/xls_combiner/venv/bin"
