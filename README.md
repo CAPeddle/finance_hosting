@@ -13,3 +13,8 @@ sudo systemctl start xls_combiner
 sudo systemctl enable xls_combiner
 
 sudo systemctl status xls_combiner
+
+TODO:
+- Separate out savings withdrawals
+- Add self update from github to app
+-   ie need to work straight from git repo? 
