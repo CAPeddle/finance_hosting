@@ -1,3 +1,8 @@
+# ABANDONED
+
+restarted in https://github.com/CAPeddle/finances
+
+
 Say interesting things
 
 
